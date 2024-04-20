@@ -19,16 +19,20 @@ def combinationSum2(candidates, target):
             
             if target == 0:
                 
-                    result.append(path[:])
+                    result.append(path[:]) #appends new copy of path
                     return 
             
             for i in range(start, len(candidates)):
                 
+                #skip duplicates
                 if i > start and candidates[i] == candidates[i-1]:
                     continue
+
+                #skip bigger nums than target
                 if candidates[i] > target:
                     break
                 
+                #append current num
                 path.append(candidates[i])
                 
                 
